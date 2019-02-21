@@ -1,6 +1,17 @@
 Log into mounted COMP 383 computer
 
+cd /home/jmorris/Miniproject/
+
 Retrieve data from NCBI:
 
-wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR818/SRR8185310/SRR8185310.sra
+  wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR818/SRR8185310/SRR8185310.sra
+
+Uncompressing data with fastq-dump:
+
+  fastq-dump -I --split-files SRR8185310.sra
+
+The files we have now are:
+jmorris@comp383:~/Miniproject$ ls
+SRR8185310_1.fastq  SRR8185310.sra
+
 

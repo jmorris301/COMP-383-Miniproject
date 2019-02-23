@@ -2,6 +2,10 @@ Log into mounted COMP 383 computer
 
 cd /home/jmorris/Miniproject/
 
+1. Retrieve the Illumina reads for the resequencing of K-12 project: https://www.ncbi.nlm.nih.gov/sra/SRX5005282.
+These are single-end Illumina reads. You can retrieve the sequences via:
+wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR818/SRR8185310/SRR8185310.sra.
+
 Retrieve data from NCBI:
 
   wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR818/SRR8185310/SRR8185310.sra
@@ -9,9 +13,21 @@ Retrieve data from NCBI:
 Uncompressing data with fastq-dump:
 
   fastq-dump -I --split-files SRR8185310.sra
+  Read 4594560 spots for SRR8185310.sra
+  Written 4594560 spots for SRR8185310.sra
+
 
 The files we have now are:
-jmorris@comp383:~/Miniproject$ ls
-SRR8185310_1.fastq  SRR8185310.sra
+  jmorris@comp383:~/Miniproject$ ls
+  SRR8185310_1.fastq  SRR8185310.sra
+#The one file output indicates it's a single-end read
 
+2. Using SPAdes, assemble the genome. Write the SPAdes command to the log file.
+  jmorris@comp383:~/Miniproject$ spades -k 55,77,99,127 -t 2 --only-assembler -s SRR8185310_1.fastq -o /home/jmorris/Miniproject/SPAdes_output/
 
+  jmorris@comp383:~/Miniproject$ cd SPAdes_output/
+  jmorris@comp383:~/Miniproject/SPAdes_output$ ls
+  assembly_graph.fastg               before_rr.fasta  contigs.paths  input_dataset.yaml  K77  misc        scaffolds.fasta  spades.log  warnings.log
+  assembly_graph_with_scaffolds.gfa  contigs.fasta    dataset.info   K55                 K99  params.txt  scaffolds.paths  tmp
+
+  

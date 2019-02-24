@@ -22,6 +22,7 @@ The files we have now are:
   SRR8185310_1.fastq  SRR8185310.sra
 #The one file output indicates it's a single-end read
 
+
 2. Using SPAdes, assemble the genome. Write the SPAdes command to the log file.
   jmorris@comp383:~/Miniproject$ spades -k 55,77,99,127 -t 2 --only-assembler -s SRR8185310_1.fastq -o /home/jmorris/Miniproject/SPAdes_output/
 
@@ -30,4 +31,70 @@ The files we have now are:
   assembly_graph.fastg               before_rr.fasta  contigs.paths  input_dataset.yaml  K77  misc        scaffolds.fasta  spades.log  warnings.log
   assembly_graph_with_scaffolds.gfa  contigs.fasta    dataset.info   K55                 K99  params.txt  scaffolds.paths  tmp
 
+
+3. Writing Python script to keep contigs with lengths > 1000 to counting_contigs.py:
+      from Bio import SeqIO
+
+      Over_1000_Sequences=[]
+
+      with open("/home/jmorris/Miniproject/SPAdes_output/contigs.fasta", "rU") as handle:
+          for record in SeqIO.parse(handle, "fasta"):
+              if len(record.seq) > 1000 :
+              # Add this record to our list
+                  Over_1000_Sequences.append(record)
+
+      print("There are %i contigs > 1000 in the assembly." % len(Over_1000_Sequences))
+
+    SeqIO.write(Over_1000_Sequences, "long_sequences.fasta", "fasta")
+
+Running the Python Script:
+  Python3 counting_contigs.py
   
+
+4. Writing Python script for total assembly reads to assembly_length.py:
+    
+    from Bio import SeqIO
+
+    length = 0
+    temp = 0
+
+    for record in SeqIO.parse('/home/jmorris/Miniproject/SPAdes_output/long_sequences.fasta', 'fasta'):
+        temp = len(record)
+        length += temp
+
+    final = str(length)
+    print('There are ' + str(length) + ' bp in the assembly.')
+    #SeqIO.write(final, "/Users/Jack/Documents/Atom.io/COMP 383/Miniproject/Assembly_length.fasta", "fasta")
+
+
+5. Using wget to retrieve E.Coli from NCBI: 
+   
+   cd /home/jmorris/OptionA_Jack_Morris/Miniproject/Prokka/
+   
+   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/Bacteria/Escherichia_coli_K_12_substr__W3110_uid161931/NC_000913.gbk
+   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/Bacteria/Escherichia_coli_K_12_substr__W3110_uid161931/NC_010473.gbk
+   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/Bacteria/Escherichia_coli_K_12_substr__W3110_uid161931/NC_007779.gbk
+   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/Bacteria/Escherichia_coli_K_12_substr__W3110_uid161931/NC_020518.gbk
+   
+   jmorris@comp383:~/OptionA_Jack_Morris/Miniproject/Prokka$ ls
+      NC_000913.gbk  NC_007779.gbk  NC_010473.gbk  NC_020518.gbk
+      
+   Using Nick's Prokka Script:
+   /home/npredey/prokka/bin/prokka-genbank_to_fasta_db NC_000913.gbk NC_010473.gbk NC_007779.gbk NC_020518.gbk > Ecoli.faa
+   
+   Group Homologs:
+   cd-hit -i Ecoli.faa -o Ecoli -T 0 -M 0 -g 1 -s 0.8 -c 0.9
+   
+   Clean up after cd-hit:
+   rm -fv Ecoli.faa Ecoli.bak.clstr Ecoli.clstr
+   
+   Make BLAST database for Prokka:
+   makeblastdb -dbtype prot -in Ecoli
+   
+   Move to Nick's database location:
+   mv Ecoli.p* /home/npredey/prokka/db/genus/JDM_Ecoli.p*
+
+    
+   
+   
+   

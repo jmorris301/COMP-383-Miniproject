@@ -161,4 +161,18 @@ ________________________________________________________________________________
   Success
 ________________________________________________________________________________________________________________________________________      
 
-8. 
+8. Need to get file from ftp:
+      wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR141/SRR1411276/SRR1411276.sra
+      
+  Using fastq-dump to convert the file type from .sra:
+      fastq-dump -I SRR1411276.sra
+  
+  Using Bowtie2:
+      bowtie2-build NC_000913.fna EcoliK12 
+      bowtie2 --quiet -x EcoliK12 -U SRR1411276.fastq -S EcoliK12.sam
+      
+  Using Tophat:
+      tophat --no-novel-juncs -o /home/OptionA_Jack_Morris EcoliK12 SRR14112976.fastq
+  
+    
+  

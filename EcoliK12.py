@@ -53,7 +53,7 @@ for i in range(1):
 	log.write(long_assembly + "\n" + "\n")
 
 
-#4
+
 # Python script for total assembly reads for contigs > 1000
 length = 0
 temp = 0
@@ -71,7 +71,6 @@ for i in range(1):
 
 
 
-#5
 # Run Prokka
 
 os.system('prokka --force --outdir ' + path + 'Prokka_Output/ --genus Escherichia --locustag ECOL long_sequences.fasta')
@@ -84,7 +83,6 @@ for i in range(1):
 
 
 
-#6
 # Writing Results of Prokka to OptionA.log
 
 now = datetime.datetime.now()
@@ -112,7 +110,6 @@ with open(path + 'Prokka_Output/' + file_name) as temp:
 	    		only.write(x)
 
 
-#7
 # Writing discrepancies of Prokka annotation to the RefSeq
 
 file_data = open(path + "Prokka_Output/" + file_name)
@@ -152,7 +149,7 @@ for n in range(1):
 	append.write(final)
 
 
-#8
+
 # Getting RefSeq file
 os.system('wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR141/SRR1411276/SRR1411276.sra')
 
@@ -173,7 +170,6 @@ os.system('cufflinks -p 2 accepted_hits.bam')
 
 
 
-#9
 # Note: Option1.fpkm file created, but contents of Cufflinks output never written to it
 # Input and output
 file = open('transcripts.gtf')

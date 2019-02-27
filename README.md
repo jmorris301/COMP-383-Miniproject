@@ -1,2 +1,2 @@
 # COMP-383-Miniproject
-## Repo for miniproject on E-coli K12
+## README.md for miniproject on E-coli K12

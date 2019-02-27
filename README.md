@@ -15,6 +15,8 @@ This is the repository running my python script which will automate assembly and
 ### Running the pipeline ###
 `$ git clone https://github.com/jmorris301/COMP-383-Miniproject.git`
 
+This will download two file types. One is the Python script EcoliK12.py and this README.md.
+
 
 ### Output ###
 After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.

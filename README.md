@@ -14,14 +14,17 @@ This is the repository running my python script which will automate assembly and
 
 ### Running the pipeline ###
 ```shell
-$ git clone https://github.com/jmorris301/COMP-383-Miniproject.git`
+$ git clone https://github.com/jmorris301/COMP-383-Miniproject.git
 ```
 
 This will download two file types. One is the Python script EcoliK12.py and this README.md.
 
-
+```shell
+$ python3 EcoliK12.py
+```
 
 ### Output ###
-After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.
-Certain command outputs and pipeline information will be written to a file called `OptionA.log`.
-Another file will be written called `Option1.fpkm` which contains Cufflinks output in a .csv format.
+After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.Certain command outputs and pipeline information will be written to a file called `OptionA.log`. Another file will be written called `Option1.fpkm` which contains Cufflinks output in a .csv format.
+
+#### Note: ####
+***The EcoliK12.py script runs up to outputting the final .fpkm file, however, the only file contents are the line headers. The data was not written to this file.***

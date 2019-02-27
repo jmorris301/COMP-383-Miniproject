@@ -14,3 +14,8 @@ The pipeline is run in python3 and requires several software and installation to
 
 The files and subdirectories in the pipeline will be written to a directory created called `OptionA_Jack_Morris`
 Certain command outputs will be written to `OptionA.log`
+
+### Running the EcoliK12.py script ###
+
+1) Download the github repo 
+2) Run the script in Command Line with `python3 EcoliK12.py`

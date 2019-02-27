@@ -12,7 +12,7 @@ The pipeline is run in python3 and requires several software and installation to
 * SRA-toolkit
 * wget
 
-The files and subdirectories in the pipeline will be written to a directory created called `OptionA_Jack_Morris`
+The files and subdirectories in the pipeline will be written to a directory created called `OptionA_Jack_Morris`.
 Certain command outputs will be written to `OptionA.log`
 
 ### Running the EcoliK12.py script ###

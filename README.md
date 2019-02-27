@@ -2,7 +2,7 @@
 #Repo for miniproject on E-coli K12
 
 _______________________________________________________________________________________________________________________________________
-
+This README.md is specified for the Python script 'EcoliK12.py' that will automate a pipeline to produce
 
 1. Retrieve the Illumina reads for the resequencing of K-12 project: https://www.ncbi.nlm.nih.gov/sra/SRX5005282.
 These are single-end Illumina reads. You can retrieve the sequences via:
@@ -20,7 +20,7 @@ Uncompressing data with fastq-dump:
 
 
 The files we have now are:
-  jmorris@comp383:~/Miniproject$ ls
+   ls
   SRR8185310_1.fastq  SRR8185310.sra
 #The one file output indicates it's a single-end read
 

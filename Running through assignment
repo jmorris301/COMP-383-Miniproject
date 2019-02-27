@@ -168,12 +168,14 @@ ________________________________________________________________________________
   Using fastq-dump to convert the file type from .sra:
       fastq-dump -I SRR1411276.sra
   
+  Need to get NC_000913.fna file:
+      wget 
+  
   Using Bowtie2:
       bowtie2-build NC_000913.fna EcoliK12 
-      bowtie2 --quiet -x EcoliK12 -U SRR1411276.fastq -S EcoliK12.sam
-      
+            
   Using Tophat:
-      tophat --no-novel-juncs -o /home/jmorris/OptionA_Jack_Morris EcoliK12 SRR14112976.fastq
+      tophat --no-novel-juncs -o + path + EcoliK12 SRR14112976.fastq
   
   Using Cufflinks:
        cufflinks -p 2 accepted_hits.bam

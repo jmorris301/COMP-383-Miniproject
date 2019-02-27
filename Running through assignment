@@ -27,7 +27,7 @@ The files we have now are:
 ________________________________________________________________________________________________________________________________________      
 
 2. Using SPAdes, assemble the genome. Write the SPAdes command to the log file.
-  jmorris@comp383:~/Miniproject$ spades -k 55,77,99,127 -t 2 --only-assembler -s SRR8185310_1.fastq -o /home/jmorris/Miniproject/SPAdes_output/
+  jmorris@comp383:~/Miniproject$ spades -k 55,77,99,127 -t 2 --only-assembler -s SRR8185310_1.fastq -o /home/jmorris/OptionA_Jack_Morris/
 
   jmorris@comp383:~/Miniproject$ cd SPAdes_output/
   jmorris@comp383:~/Miniproject/SPAdes_output$ ls
@@ -67,9 +67,10 @@ ________________________________________________________________________________
         temp = len(record)
         length += temp
 
-    final = str(length)
-    print('There are ' + str(length) + ' bp in the assembly.')
-    #SeqIO.write(final, "/Users/Jack/Documents/Atom.io/COMP 383/Miniproject/Assembly_length.fasta", "fasta")
+    final_length = str(length)
+    solution = ('There are ' + str(length) + ' bp in the assembly.')
+    print(solution)
+    #SeqIO.write(solution, "/Users/Jack/Documents/Atom.io/COMP 383/Miniproject/Assembly_length.fasta", "fasta")
 
 ________________________________________________________________________________________________________________________________________      
 
@@ -172,7 +173,13 @@ ________________________________________________________________________________
       bowtie2 --quiet -x EcoliK12 -U SRR1411276.fastq -S EcoliK12.sam
       
   Using Tophat:
-      tophat --no-novel-juncs -o /home/OptionA_Jack_Morris EcoliK12 SRR14112976.fastq
+      tophat --no-novel-juncs -o /home/jmorris/OptionA_Jack_Morris EcoliK12 SRR14112976.fastq
   
-    
+  Using Cufflinks:
+       cufflinks -p 2 accepted_hits.bam
+  
+  Success
+________________________________________________________________________________________________________________________________________
+  
+9. 
   

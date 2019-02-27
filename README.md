@@ -13,10 +13,8 @@ This is the repository running my python script which will automate assembly and
 * wget
 
 ### Running the pipeline ###
-Download the github repo.
-`git clone ENTER THE URL`
-You will recieve two files: `EcoliK12.py` and this `README.md`.
-Run the script in Command Line with `python3 EcoliK12.py`.
+`$ git clone ENTER THE URL`
+
 
 ### Output ###
 After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.

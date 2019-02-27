@@ -1,21 +1,24 @@
-# COMP-383-Miniproject
-## README.md for miniproject on E-coli K12
+## EcoliK12 Miniproject Option A
 
-This is the repository running my python script which will automate resequencing of EcoliK12 data. The purpose of resequencing is due to the evolution of the K12 strain. These give rise to derivations over time require that resequencing of modern strains derived from the original K12 strain. 
+This is the repository running my python script which will automate assembly and annotation for the resequencing of EcoliK12 sequences. The purpose of resequencing is due to the ever evolving nature of the Ecoli K12 strain. This has required researchers to resequence it to track its evolution over time relative to the original K12 strain. 
 
-The pipeline is run in python3 and requires several software and installation tools including: 
-* SPAdes
+### Prior Installation ###
+* Python 3
+* SPAdes v3.11.1
 * Prokka
-* Tophat2 
-* Bowtie2
-* Cufflinks 
+* tophat v2.1.1
+* bowtie v1.2.2
+* cufflinks v2.2.1
 * SRA-toolkit
 * wget
 
-The files and subdirectories in the pipeline will be written to a directory created called `OptionA_Jack_Morris`.
-Certain command outputs will be written to `OptionA.log`
+### Running the pipeline ###
+Download the github repo
+'git clone ENTER THE URL'
+You will recieve two files: `EcoliK12.py` and this `README.md`.
+Run the script in Command Line with `python3 EcoliK12.py`.
 
-### Running the EcoliK12.py script ###
-
-1) Download the github repo 
-2) Run the script in Command Line with `python3 EcoliK12.py`
+### Output ###
+After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.
+Certain command outputs and pipeline information will be written to a file called `OptionA.log`.
+Another file will be written called `Option1.fpkm` which contains Cufflinks output in a .csv format.

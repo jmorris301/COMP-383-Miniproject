@@ -24,7 +24,7 @@ $ python3 EcoliK12.py
 ```
 
 ### Output ###
-After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`.Certain command outputs and pipeline information will be written to a file called `OptionA.log`. Another file will be written called `Option1.fpkm` which contains Cufflinks output in a .csv format.
+After running the script, all files and subdirectories in the pipeline will be automatically written to a directory called `OptionA_Jack_Morris`. Certain command outputs and pipeline information will be written to a file called `OptionA.log`. Another file will be written to this directory called `Option1.fpkm` containing the .fkpm Cufflinks output in a .csv file format (***See note below***).
 
 #### Note: ####
 ***The EcoliK12.py script runs up to outputting the final .fpkm file, however, the only file contents are the line headers. The data was not written to this file.***

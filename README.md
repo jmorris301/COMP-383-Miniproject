@@ -17,7 +17,7 @@ This is the repository running my python script which will automate assembly and
 $ git clone https://github.com/jmorris301/COMP-383-Miniproject.git
 ```
 
-This will download two file types. One is the Python script EcoliK12.py and this README.md.
+This will download two file types - the Python script EcoliK12.py and this README.md.
 
 ```shell
 $ python3 EcoliK12.py

@@ -184,4 +184,13 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________
   
 9. 
+#Note: Option1.fpkm file created, but contents of Cufflinks output never written to it
+#Input and output
+  file = open('transcripts.gtf')
+  fpkm_input = open('Option1.fpkm','w')
+
+  format = csv.writer(fpkm_input, delimiter=',')
+
+#Calling writerow to write out parameters for Option1.fpkm
+  format.writerow(['seqname','start','end','strand','FPKM'])
   

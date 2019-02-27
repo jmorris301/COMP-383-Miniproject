@@ -13,7 +13,7 @@ This is the repository running my python script which will automate assembly and
 * wget
 
 ### Running the pipeline ###
-`$ git clone ENTER THE URL`
+`$ git clone https://github.com/jmorris301/COMP-383-Miniproject.git`
 
 
 ### Output ###
